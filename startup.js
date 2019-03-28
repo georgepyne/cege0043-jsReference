@@ -4,6 +4,7 @@ function trackAndCircle() {
     // trackLocation();
     addPointLinePoly();
     getEarthquakes();
+    loadW3HTML();
 
 }
 
@@ -13,6 +14,10 @@ function startup() {
         trackAndCircle();
     }, false);
     getPort();
+}
+
+function loadW3HTML(){
+    w3.includeHTML();
 }
 
 
