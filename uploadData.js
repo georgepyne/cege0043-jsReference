@@ -35,7 +35,9 @@ function startDataUpload() {
  */
 function processData(postString) {
     client = new XMLHttpRequest();
-    client.open("POST", "http://developer.cege.ucl.ac.uk:30308/reflectData", true);
+    postString = postString + "&port_id=" + httpPortNumber;
+    var url = 'http://developer.cege.ac.uk:' + httpPortNumber + "/uploadData";
+    client.open("POST", url, true);
     client.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     client.onreadystatechange = dataUploaded;
     // alert(client.responseText);
@@ -51,3 +53,4 @@ function dataUploaded() {
         document.getElementById("dataUploadResults").innerHTML = client.responseText;
     }
 }
+
