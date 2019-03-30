@@ -25,15 +25,14 @@ function startDataUpload() {
     var language = document.getElementById("laguageselectbox").value;
     postString=postString+"&language="+language;
     // alert(postString);
-    processData(postString);
+    uploadData(postString);
 
 }
 
 
-
 /*
  */
-function processData(postString) {
+function uploadData(postString) {
     client = new XMLHttpRequest();
     postString = postString + "&port_id=" + httpPortNumber;
     var url = 'http://developer.cege.ac.uk:' + httpPortNumber + "/uploadData";
